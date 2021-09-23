@@ -17,7 +17,7 @@ public class task1 {
         driver.navigate().to(url);
 
         WebElement headerText = driver.findElement(By.xpath("//span[@class=\"gum\"]"));
-        if(headerText.getText().equalsIgnoreCase("AUTOMATION TESTING PLATFORM BY SYNTAX"))
+        if (headerText.getText().equalsIgnoreCase("AUTOMATION TESTING PLATFORM BY SYNTAX"))
             System.out.println("Text in header is displayed");
         else
             System.out.println("Text in header is not displayed");
@@ -28,12 +28,13 @@ public class task1 {
             System.out.println("Enroll button is enabled");
         else
             System.out.println("Enroll button is not enabled");
+        driver.switchTo().defaultContent();
 
-        driver.switchTo().frame(0);
-        WebElement syntaxLogo = driver.findElement(By.xpath("//body/div[2]/div[1]/div[2]/div[1]"));
-        if (syntaxLogo.isDisplayed()){
+        driver.switchTo().frame("FrameOne");
+        WebElement syntaxLogo = driver.findElement(By.xpath("//img[@alt=\"Syntax Technologies Logo\"]"));
+        if (syntaxLogo.isDisplayed()) {
             System.out.println("Logo is displayed");
-        }else
+        } else
             System.out.println("Error");
         driver.quit();
     }
